@@ -51,37 +51,37 @@
         <p>* Ces zones sont obligatoires</p>
         <fieldset>
             <legend>Vos coordonnées</legend>
-                <div>
+                <div class="form-group">
                     <label for="nom">Votre nom* : </label> <input type="text" name="nom" id="nom" autofocus required>
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="prenom">Votre prénom* : </label> <input type="text" name="prenom" id="prenom" required>
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="sexe">Sexe* : </label>
                 </div>
-                <div>
+                <div class="form-group">
                     <input type="radio" name="sexe" value="feminin" id="sexe" required> Féminin <input type="radio" name="sexe" value="masculin" required> Masculin
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="ddn">Date de naissance* : </label> <input type="text" name="ddn" id="ddn" required placeholder="jj/mm/aaaa">
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="cp">Code Postal : </label> <input type="text" name="cp" id="cp">
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="adresse">Adresse : </label><input type="text" name="adresse" id="adresse">
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="ville">Ville : </label><input type="text" name="ville" id="ville">
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="email">E-mail* : </label><input type="email" name="email" id="email" required>
                 </div>
         </fieldset>
         <fieldset>
             <legend>Votre demande</legend>
-                <div>
+                <div class="form-group">
                 <label for="sujet">Sujet* : </label><select name="sujet" id="sujet" required>
                                                         <option value="" selected>----</option> 
                                                         <option value="commandes" >Mes commandes</option>
@@ -90,8 +90,8 @@
                                                         <option value="autres">Autres</option>
                                                     </select>
                 </div>
-                <div><label for="question">Votre question* : </label></div>
-                <div><textarea name="question" id="question" cols="50" rows="5" required></textarea></div>
+                <div class="form-group"><label for="question">Votre question* : </label></div>
+                <div class="form-group"><textarea name="question" id="question" cols="40" rows="5" required></textarea></div>
                 
         </fieldset>
         <div>

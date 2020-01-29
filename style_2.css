@@ -6,3 +6,10 @@
 .img-responsive {
     display: inline-block;
 }
+
+.img-fluid{
+    width: 200px;
+    height: auto;
+    border: 1px gray;
+    border-radius: 5px;
+}

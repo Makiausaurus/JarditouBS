@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="style_2.css">
     <title>Jarditou - Tableau</title>
     <style>
         table, tr, td, th 
@@ -20,15 +21,16 @@
 <body><div class="container-fluid">
     <header>
         <div class="row">
-            <div class="col-sm-12 align-self-center col-md-4">
+            <div class="col-12 col-lg-4 text-center">
                 <img style="margin-bottom: 5px;" src="assets/img/jarditou_logo.jpg" width="300" height="90" alt="logo jarditou"
-                    title="logo jarditou">
+                    title="logo jarditou" class="img-responsive">
             </div>
-            <div class="col-8 text-center align-self-center">
+            <div class="col-lg-8 text-center align-self-center">
                 <h3>Tout le jardin</h3>
             </div>
         </div>
-        <nav id="navbar" class="navbar navbar-expand-sm bg-dark navbar-dark">
+<!--barre de menu-->
+        <nav id="navbar" class="row no-gutter navbar navbar-expand-lg bg-dark navbar-dark">
             <!-- Toggler/collapsibe Button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -48,8 +50,8 @@
                 </ul>
             </div> 
         </nav>
-        <div class="row">
-            <img style="margin-bottom: 5px; margin-top: 5px;" class="col-12"src="assets/img/promotion.jpg" alt="promotion sur les lames de terrasse" title="promotion">
+        <div class="row no-gutter">
+            <img style="margin-bottom: 5px;" class="col-12"src="assets/img/promotion.jpg" alt="promotion sur les lames de terrasse" title="promotion">
         </div>
     </header>
 
@@ -111,7 +113,7 @@
     </div>
 
     <footer>
-        <nav id="navbar" class="navbar navbar-expand-sm bg-dark navbar-dark text-center">
+        <nav style="margin-top: 5px;" id="navbar" class="navbar navbar-expand-lg bg-dark navbar-dark text-center justify-content-center">
             <ul class="navbar-nav align-items-center">
                 <li class="nav-item">
                     <a class="nav-link" href="#mentionlegales">Mentions légales</a>

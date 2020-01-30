@@ -1,134 +1,155 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="style_2.css">
     <title>Jarditou - Tableau</title>
     <style>
-        table, tr, td, th 
-        { 
-           border: 1px solid gray;
+        table,
+        tr,
+        td,
+        th {
+            border: 1px solid gray;
         }
-        thead
-        {
+
+        thead {
             border-bottom: 2px gray;
         }
-        </style>
+    </style>
 </head>
-<body><div class="container-fluid">
-    <header>
-        <div class="row">
-            <div class="col-12 col-lg-4 text-center">
-                <img style="margin-bottom: 5px;" src="assets/img/jarditou_logo.jpg" width="300" height="90" alt="logo jarditou"
-                    title="logo jarditou" class="img-responsive">
+
+<body>
+    <div class="container-fluid">
+        <header>
+            <div class="row">
+                <div class="col-12 col-lg-4 text-center">
+                    <img style="margin-bottom: 5px;" src="assets/img/jarditou_logo.jpg" width="300" height="90"
+                        alt="logo jarditou" title="logo jarditou" class="img-responsive">
+                </div>
+                <div class="col-lg-8 text-center align-self-center">
+                    <h3>Tout le jardin</h3>
+                </div>
             </div>
-            <div class="col-lg-8 text-center align-self-center">
-                <h3>Tout le jardin</h3>
+            <!--barre de menu-->
+            <nav id="navbar" class="row no-gutter navbar navbar-expand-lg bg-dark navbar-dark">
+                <!-- Toggler/collapsibe Button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index_nocss.html">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="tableau.html">Tableau</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="row no-gutter">
+                <img style="margin-bottom: 5px;" class="col-12" src="assets/img/promotion.jpg"
+                    alt="promotion sur les lames de terrasse" title="promotion">
             </div>
+        </header>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <td><strong>Photos</strong></td>
+                        <td><strong>ID</strong></td>
+                        <td><strong>Catégorie</strong></td>
+                        <td><strong>Libellé</strong></td>
+                        <td><strong>Prix</strong></td>
+                        <td><strong>Couleur</strong></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img class="img-fluid img-thumbnail" src="assets/img/7.jpg" alt="barbecue aramis"
+                                title="barbecue-aramis"></td>
+                        <td>7</td>
+                        <td>Barbecues</td>
+                        <td>Aramis</td>
+                        <td>110.00€</td>
+                        <td>Brun</td>
+                    </tr>
+                    <tr>
+                        <td><img class="img-fluid img-thumbnail" src="assets/img/8.jpg" alt="barbecue athos"
+                                title="barbecue-athos"></td>
+                        <td>8</td>
+                        <td>Barbecues</td>
+                        <td>Athos</td>
+                        <td>249.99€</td>
+                        <td>Noir</td>
+                    </tr>
+                    <tr>
+                        <td><img class="img-fluid img-thumbnail" src="assets/img/11.jpg" alt="barbecue clatronic"
+                                title="barbecue-clatronic"></td>
+                        <td>11</td>
+                        <td>Barbecues</td>
+                        <td>Clatronic</td>
+                        <td>135.90€</td>
+                        <td>Chrome</td>
+                    </tr>
+                    <tr>
+                        <td><img class="img-fluid img-thumbnail" src="assets/img/12.jpg" alt="barbecue camping"
+                                title="barbecue-camping"></td>
+                        <td>12</td>
+                        <td>Barbecues</td>
+                        <td>Camping</td>
+                        <td>88.00€</td>
+                        <td>Noir</td>
+                    </tr>
+                    <tr>
+                        <td><img class="img-fluid img-thumbnail" src="assets/img/13.jpg" alt="brouette green"
+                                title="brouette-green"></td>
+                        <td>13</td>
+                        <td>Brouettes</td>
+                        <td>Green</td>
+                        <td>49.00€</td>
+                        <td>Verte</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-<!--barre de menu-->
-        <nav id="navbar" class="row no-gutter navbar navbar-expand-lg bg-dark navbar-dark">
-            <!-- Toggler/collapsibe Button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-         
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
+
+        <footer>
+            <nav style="margin-top: 5px;" id="navbar"
+                class="row no-gutter navbar navbar-expand-lg bg-dark navbar-dark text-center justify-content-center">
+                <ul class="navbar-nav align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="index_nocss.html">Accueil</a>
+                        <a class="nav-link" href="#mentionlegales">Mentions légales</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="tableau.html">Tableau</a>
+                        <a class="nav-link" href="#horaires">Horaires</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Formulaire wazaa</a>
+                        <a class="nav-link" href="#plandusite">Plan du site</a>
                     </li>
                 </ul>
-            </div> 
-        </nav>
-        <div class="row no-gutter">
-            <img style="margin-bottom: 5px;" class="col-12"src="assets/img/promotion.jpg" alt="promotion sur les lames de terrasse" title="promotion">
-        </div>
-    </header>
-
-    <div class="table-responsive">
-        <table class="table table-striped table-hover table-bordered">
-            <thead>
-                <tr>
-                    <td><h3>Photos</h3></td>
-                    <td><h3>ID</h3></td>
-                    <td><h3>Catégorie</h3></td>
-                    <td><h3>Libellé</h3></td>
-                    <td><h3>Prix</h3></td>
-                    <td><h3>Couleur</h3></td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><img class="img-fluid" src="assets/img/7.jpg" alt="barbecue aramis" title="barbecue-aramis"></td>
-                    <td>7</td>
-                    <td>Barbecues</td>
-                    <td>Aramis</td>
-                    <td>110.00€</td>
-                    <td>Brun</td>
-                </tr>
-                <tr>
-                    <td><img class="img-fluid" src="assets/img/8.jpg" alt="barbecue athos" title="barbecue-athos"></td>
-                    <td>8</td>
-                    <td>Barbecues</td>
-                    <td>Athos</td>
-                    <td>249.99€</td>
-                    <td>Noir</td>
-                </tr>
-                <tr>
-                    <td><img class="img-fluid" src="assets/img/11.jpg" alt="barbecue clatronic" title="barbecue-clatronic"></td>
-                    <td>11</td>
-                    <td>Barbecues</td>
-                    <td>Clatronic</td>
-                    <td>135.90€</td>
-                    <td>Chrome</td>
-                </tr>
-                <tr>
-                    <td><img class="img-fluid" src="assets/img/12.jpg" alt="barbecue camping" title="barbecue-camping"></td>
-                    <td>12</td>
-                    <td>Barbecues</td>
-                    <td>Camping</td>
-                    <td>88.00€</td>
-                    <td>Noir</td>
-                </tr>
-                <tr>
-                    <td><img class="img-fluid" src="assets/img/13.jpg" alt="brouette green" title="brouette-green"></td>
-                    <td>13</td>
-                    <td>Brouettes</td>
-                    <td>Green</td>
-                    <td>49.00€</td>
-                    <td>Verte</td>
-                </tr>
-            </tbody>
-        </table>
+            </nav>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+        </script>
     </div>
+</body>
 
-    <footer>
-        <nav style="margin-top: 5px;" id="navbar" class="row no-gutter navbar navbar-expand-lg bg-dark navbar-dark text-center justify-content-center">
-            <ul class="navbar-nav align-items-center">
-                <li class="nav-item">
-                    <a class="nav-link" href="#mentionlegales">Mentions légales</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#horaires">Horaires</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#plandusite">Plan du site</a>
-                </li>
-            </ul>
-    </nav>
-    </footer>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>    
-</div></body>
 </html>

@@ -33,7 +33,7 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="index_nocss.html">Accueil</a>
+                            <a class="nav-link" href="index_bs.html">Accueil</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="tableau.html">Tableau</a>
@@ -51,69 +51,110 @@
         </header>
         <hr>
         <!--formulaire-->
-        <form class="container" action="http://bienvu.net/script.php" method="POST">
+        <form class="container" action="http://bienvu.net/script.php" method="POST" id="myForm">
             <section>
                 <h2>Contactez-nous !</h2>
             </section>
 
-            <p>* Ces zones sont obligatoires</p>
+            <p class="font-weight-bold text-danger">* Ces zones sont obligatoires</p>
             <fieldset>
                 <legend>Vos coordonnées</legend>
+
                 <div class="form-group">
-                    <label for="nom">Votre nom* : </label> <input class="form-control" type="text" name="nom" id="nom"
-                        autofocus required>
+                    <label for="nom">Votre nom <span class="font-weight-bold text-danger">*</span> : </label> <span
+                        id="errorNom"></span>
+                    <input class="form-control" type="text" name="nom" id="nom" placeholder="Loper">
                 </div>
+
                 <div class="form-group">
-                    <label for="prenom">Votre prénom* : </label> <input class="form-control" type="text" name="prenom"
-                        id="prenom" required>
+                    <label for="prenom">Votre prénom <span class="font-weight-bold text-danger">*</span> : </label>
+                    <span id="errorPrenom"></span>
+                    <input class="form-control" type="text" name="prenom" id="prenom" placeholder="Dave">
                 </div>
+
                 <div class="form-group">
-                    <label for="sexe">Sexe* : </label>
+                    <label for="genre">Sexe <span class="font-weight-bold text-danger">*</span> : </label>
+                    <span id="errorGenre"></span>
+
+                    <div class="btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-outline-secondary">
+                            <input type="radio" name="genre" value="f" id="feminin">
+                            Féminin
+                        </label>
+                        <label class="btn btn-outline-secondary">
+                            <input type="radio" name="genre" value="m" id="masculin">
+                            Masculin
+                        </label>
+                    </div>
                 </div>
+
                 <div class="form-group">
-                    <input type="radio" name="sexe" value="feminin" id="sexe" required> Féminin <input type="radio"
-                        name="sexe" value="masculin" required> Masculin
+                    <label for="birthDate">Date de naissance <span class="font-weight-bold text-danger">*</span> :
+                    </label> <span id="errorBirthDate"></span>
+                    <input class="form-control" type="text" name="birthDate" id="birthDate" maxlength="10"
+                        placeholder="jj/mm/aaaa">
                 </div>
+
                 <div class="form-group">
-                    <label for="ddn">Date de naissance* : </label> <input class="form-control" type="text" name="ddn"
-                        id="ddn" maxlength="10" required placeholder="jj/mm/aaaa">
+                    <label for="codePostal">Code Postal <span class="font-weight-bold text-danger">*</span> : </label>
+                    <span id="errorCodePostal"></span>
+                    <input class="form-control" type="text" name="codePostal" id="codePostal" placeholder="Ex : 75000">
                 </div>
+
                 <div class="form-group">
-                    <label for="cp">Code Postal : </label> <input class="form-control" type="text" name="cp" id="cp">
+                    <label for="adresse">Adresse : </label>
+                    <input class="form-control" type="text" name="adresse" id="adresse">
                 </div>
+
                 <div class="form-group">
-                    <label for="adresse">Adresse : </label><input class="form-control" type="text" name="adresse"
-                        id="adresse">
+                    <label for="ville">Ville <span class="font-weight-bold text-danger">*</span> : </label> <span
+                        id="errorVille"></span>
+                    <input class="form-control" type="text" name="ville" id="ville" placeholder="Paris">
                 </div>
+
                 <div class="form-group">
-                    <label for="ville">Ville : </label><input class="form-control" type="text" name="ville" id="ville">
-                </div>
-                <div class="form-group">
-                    <label for="email">E-mail* : </label><input class="form-control" type="email" name="email"
-                        id="email" required>
+                    <label for="mail">E-mail <span class="font-weight-bold text-danger">*</span> : </label> <span
+                        id="errorMail"></span>
+                    <input class="form-control" type="mail" name="mail" id="mail" placeholder="dave.loper@gmail.com">
                 </div>
             </fieldset>
+
             <fieldset>
                 <legend>Votre demande</legend>
+
                 <div class="form-group">
-                    <label for="sujet">Sujet* : </label><select class="form-control" name="sujet" id="sujet" required>
-                        <option value="" selected>----</option>
+                    <label for="sujet">Sujet <span class="font-weight-bold text-danger">*</span> : </label> <span
+                        id="errorSujet"></span>
+                    <select class="custom-select" name="sujet" id="sujet">
+                        <option value="">Choisissez le sujet de votre demande</option>
                         <option value="commandes">Mes commandes</option>
                         <option value="questionproduit">Questions sur un produit</option>
                         <option value="reclamation"> Réclamation</option>
                         <option value="autres">Autres</option>
                     </select>
                 </div>
-                <div class="form-group"><label for="question">Votre question* : </label></div>
-                <div class="form-group"><textarea class="form-control" name="question" id="question" cols="40" rows="5"
-                        required></textarea></div>
 
+                <div class="form-group"><label for="question">Votre question <span
+                            class="font-weight-bold text-danger">*</span> : </label> <span id="errorQuestion"></span>
+                </div>
+
+                <div class="form-group">
+                    <textarea class="form-control" name="question" id="question" cols="40" rows="5"></textarea>
+                </div>
             </fieldset>
-            <div>
-                <label for="consent"><input type="checkbox" name="consent" id="consent" required>J'accepte le traitement
-                    informatique de ce formulaire</label>
+
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" name="consent" id="consent">
+                <label class="custom-control-label" for="consent"> J'accepte le traitement informatique de ce
+                    formulaire</label> <span class="font-weight-bold text-danger">*</span>
+                <br>
+                <span id="errorConsent"></span>
             </div>
-            <button type="submit">Envoyer</button> <button type="reset">Annuler</button>
+
+            <div class="d-flex row justify-content-between mt-3">
+                <button class="btn btn-secondary col-4" type="submit">Envoyer</button>
+                <button class="btn btn-outline-secondary col-4" type="reset">Effacer</button>
+            </div>
         </form>
         <hr>
         <!--menu footer-->
@@ -133,16 +174,12 @@
                 </ul>
             </nav>
         </footer>
+        <script src="assets/script/scriptForm.js"></script>
         <!--script bootstrap-->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
-        </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
-        </script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
     </div>
 </body>
 

@@ -10,51 +10,34 @@ let RegExNomPrenomVille = /^[a-zA-Z-\s]+$/; //accepte lettres, tirets, espaces
 
 // début validation
 
+function validInput(input, error) {
+    if (input.value == "") {
+        error.innerHTML = "<p>Ce champs doit être renseigné.</p>"
+        error.style.color = "red";
+    } else if (RegExNomPrenomVille.test(input.value) == false) {
+        error.innerHTML = "<p>Ce champs doit uniquement comporter des lettres, " +
+            " des tirets et des espaces.</p>"
+        error.style.color = "red";
+    } else {
+        error.innerHTML = "";
+        validField.push("1");
+    }
+}
+
 myForm.addEventListener('submit', function (e) {
+
+    e.preventDefault();
+    validField.length = 0;
     //vérification Nom
     let inputNom = document.getElementById("nom");
-
-    if (inputNom.value == "") {
-        let errorNom = document.getElementById("errorNom");
-        errorNom.innerHTML = "<p>Le nom doit être renseigné.</p>"
-        errorNom.style.color = "red";
-        e.preventDefault();
-    } else if (RegExNomPrenomVille.test(inputNom.value) == false) {
-        let errorNom = document.getElementById("errorNom");
-        errorNom.innerHTML = "<p>Le nom doit uniquement comporter des lettres, " +
-            " des tirets et des espaces.</p>"
-        errorNom.style.color = "red";
-        e.preventDefault();
-    } else {
-        let errorNom = document.getElementById("errorNom");
-        errorNom.innerHTML = "";
-        e.preventDefault();
-        validField.push("1");
-        return inputNom;
-    }
+    let errorNom = document.getElementById("errorNom");
+    validInput(inputNom, errorNom);
 
     //vérification Prénom
     let inputPrenom = document.getElementById("prenom");
+    let errorPrenom = document.getElementById("errorPrenom");
+    validInput(inputPrenom, errorPrenom);
 
-    if (inputPrenom.value == "") {
-        let errorPrenom = document.getElementById("errorPrenom");
-        errorPrenom.innerHTML = "<p>Le prénom doit être renseigné.</p>"
-        errorPrenom.style.color = "red";
-        console.log(inputPrenom.value);
-        e.preventDefault();
-    } else if (RegExNomPrenomVille.test(inputPrenom.value) == false) {
-        let errorPrenom = document.getElementById("errorPrenom");
-        errorPrenom.innerHTML = "<p>Le prénom doit uniquement comporter des lettres, " +
-            " des tirets et des espaces.</p>"
-        errorPrenom.style.color = "red";
-        e.preventDefault();
-    } else {
-        let errorPrenom = document.getElementById("errorPrenom");
-        errorPrenom.innerHTML = "";
-        e.preventDefault();
-        validField.push("1");
-        return inputPrenom;
-    }
     // vérification Sexe
     let inputGenreF = document.getElementById("feminin");
     let inputGenreM = document.getElementById("masculin");
@@ -64,13 +47,10 @@ myForm.addEventListener('submit', function (e) {
         let errorGenre = document.getElementById("errorGenre");
         errorGenre.innerHTML = "<p>Veuillez sélectionner votre genre.</p>"
         errorGenre.style.color = "red";
-        e.preventDefault();
     } else {
         let errorGenre = document.getElementById("errorGenre");
         errorGenre.innerHTML = "";
-        e.preventDefault();
         validField.push("1");
-        return inputGenreM, inputGenreF;
     }
 
     //vérification Date de naissance
@@ -79,19 +59,15 @@ myForm.addEventListener('submit', function (e) {
         let errorBirthDate = document.getElementById("errorBirthDate");
         errorBirthDate.innerHTML = "<p>La date de naissance doit être renseignée.</p>"
         errorBirthDate.style.color = "red";
-        e.preventDefault();
     } else if (RegExBirthDate.test(inputBirthDate.value) == false) {
         let errorBirthDate = document.getElementById("errorBirthDate");
         errorBirthDate.innerHTML = "<p>La date de naissance doit uniquement contenir" +
             " des chiffres, des '\/' et être au format 'jj\/mm\/aa\(aa\)'</p>"
         errorBirthDate.style.color = "red";
-        e.preventDefault();
     } else {
         let errorBirthDate = document.getElementById("errorBirthDate");
         errorBirthDate.innerHTML = "";
-        e.preventDefault();
         validField.push("1");
-        return inputBirthDate
     }
     //vérification Code postal
     let inputCodePost = document.getElementById("codePostal");
@@ -99,59 +75,36 @@ myForm.addEventListener('submit', function (e) {
         let errorCodePostal = document.getElementById("errorCodePostal");
         errorCodePostal.innerHTML = "<p>Le Code Postal doit être renseigné.</p>"
         errorCodePostal.style.color = "red";
-        e.preventDefault();
     } else if (RegExCP.test(inputCodePost.value) == false) {
         let errorCodePostal = document.getElementById("errorCodePostal");
         errorCodePostal.innerHTML = "<p>Le Code Postal doit obligatoirement être " +
             "composé de 5 chiffres</p>"
         errorCodePostal.style.color = "red";
-        e.preventDefault();
     } else {
         let errorCodePostal = document.getElementById("errorCodePostal");
         errorCodePostal.innerHTML = "";
-        e.preventDefault();
         validField.push("1");
-        return inputCodePost;
     }
     //vérification Ville
     let inputVille = document.getElementById("ville");
-    if (inputVille.value == "") {
-        let errorVille = document.getElementById("errorVille");
-        errorVille.innerHTML = "<p>La ville doit être renseigné.</p>"
-        errorVille.style.color = "red";
-        e.preventDefault();
-    } else if (RegExNomPrenomVille.test(inputVille.value) == false) {
-        let errorVille = document.getElementById("errorVille");
-        errorVille.innerHTML = "<p>La ville doit uniquement comporter des lettres, " +
-            " des tirets et des espaces.</p>"
-        errorVille.style.color = "red";
-        e.preventDefault();
-    } else {
-        let errorVille = document.getElementById("errorVille");
-        errorVille.innerHTML = "";
-        e.preventDefault();
-        validField.push("1");
-        return inputVille;
-    }
+    let errorVille = document.getElementById("errorVille");
+    validInput(inputVille, errorVille);
+
     //vérification mail
     let inputMail = document.getElementById("mail");
     if (inputMail.value == "") {
         let errorMail = document.getElementById("errorMail");
         errorMail.innerHTML = "<p>L'adresse e-mail doit être renseigné.</p>"
         errorMail.style.color = "red";
-        e.preventDefault();
     } else if (RegExMail.test(inputMail.value) == false) {
         let errorMail = document.getElementById("errorMail");
         errorMail.innerHTML = "<p>L'adresse e-mail doit obligatoirement contenir" +
             " un '@' et être au format 'xxx@yy.zz'</p>"
         errorMail.style.color = "red";
-        e.preventDefault();
     } else {
         let errorMail = document.getElementById("errorMail");
         errorMail.innerHTML = "";
-        e.preventDefault();
         validField.push("1");
-        return inputMail;
     }
 
     //vérification sujet
@@ -160,13 +113,10 @@ myForm.addEventListener('submit', function (e) {
         let errorSujet = document.getElementById("errorSujet");
         errorSujet.innerHTML = "<p>Veuillez choisir un sujet.</p>"
         errorSujet.style.color = "red";
-        e.preventDefault();
     } else {
         let errorSujet = document.getElementById("errorSujet");
         errorSujet.innerHTML = "";
-        e.preventDefault();
         validField.push("1");
-        return inputSujet;
     }
 
     //vérification question 
@@ -175,13 +125,10 @@ myForm.addEventListener('submit', function (e) {
         let errorQuestion = document.getElementById("errorQuestion");
         errorQuestion.innerHTML = "<p>Veuillez poser une question.</p>"
         errorQuestion.style.color = "red";
-        e.preventDefault();
     } else {
         let errorQuestion = document.getElementById("errorQuestion");
         errorQuestion.innerHTML = "";
-        e.preventDefault();
         validField.push("1");
-        return inputQuestion;
     }
     //vérification consentement
     let checkConsent = document.getElementById("consent");
@@ -189,13 +136,10 @@ myForm.addEventListener('submit', function (e) {
         let errorConsent = document.getElementById("errorConsent");
         errorConsent.innerHTML = "<p>Veuillez accepter les conditions.</p>"
         errorConsent.style.color = "red";
-        e.preventDefault();
     } else {
         let errorConsent = document.getElementById("errorConsent");
         errorConsent.innerHTML = "";
-        e.preventDefault();
         validField.push("1");
-        return checkConsent;
     }
 
     if (validField.length == 10) {
